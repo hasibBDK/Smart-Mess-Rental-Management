@@ -1,16 +1,104 @@
-# React + Vite
+# Smart Mess Rental Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A centralized web platform where students can find available mess seats and rental houses, and landlords/mess owners can publish their available spaces. Built with the MERN stack.
 
-Currently, two official plugins are available:
+## Problem Statement
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Students often struggle to find available mess seats, rental houses, or suitable accommodation. At the same time, landlords and mess owners have difficulty reaching students who are looking for accommodation. This system solves that by providing one centralized platform for both sides.
 
-## React Compiler
+## User Roles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Student** — search/browse mess & rental listings, view details, contact owners, manage profile
+- **Landlord / House Owner** — publish and manage house rental listings
+- **Mess Owner** — publish and manage mess seat listings, update seat availability
+- **Admin** — manage users, approve/reject listings, moderate content
 
-## Expanding the Oxlint configuration
+## MVP Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- [ ] User registration & login (role-based auth)
+- [ ] Student profile
+- [ ] Mess seat listing (create/view)
+- [ ] House/rental listing (create/view)
+- [ ] Search & filter (location, price, type)
+- [ ] Student → owner contact
+- [ ] Landlord publish house listing
+- [ ] Mess owner publish seat listing
+- [ ] Admin dashboard
+- [ ] Post approval / moderation
+
+## Phase 2 (Planned, not in MVP)
+
+- [ ] Used-product buy/sell marketplace for students
+- [ ] Student requirement posts
+- [ ] Reviews / ratings
+- [ ] Notifications
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React |
+| Backend | Node.js, Express.js |
+| Database | MongoDB |
+| Version Control | Git & GitHub |
+
+## Project Structure (planned)
+
+```
+smart-mess-rental/
+├── client/          # React frontend
+├── server/          # Express backend
+│   ├── models/
+│   ├── routes/
+│   ├── controllers/
+│   └── middleware/
+├── docs/            # SRS and other documentation
+└── README.md
+```
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone <repo-url>
+
+# Backend
+cd server
+npm install
+npm run dev
+
+# Frontend
+cd client
+npm install
+npm start
+```
+
+## Contribution Guidelines
+
+- Create a feature branch from `main` for every task: `feature/<short-description>`
+- Commit messages should be clear and descriptive (e.g., `feat: add mess listing creation API`)
+- Open a Pull Request into `main` and get it reviewed before merging
+- Keep MVP features scoped — Phase 2 features go into separate branches/issues once MVP is stable
+- Document any new API route in `docs/`
+
+## Initial Task List
+
+1. Finalize SRS and get supervisor sign-off
+2. Set up GitHub repository, branch structure, and `.gitignore`
+3. Initialize backend (Express server, MongoDB connection, folder structure)
+4. Design and implement User schema + auth (register/login, role-based)
+5. Design and implement Mess Listing schema + CRUD APIs
+6. Design and implement House/Rental Listing schema + CRUD APIs
+7. Implement search & filter API
+8. Initialize frontend (React app, routing, basic layout)
+9. Build auth pages (register/login) on frontend
+10. Build listing creation forms (landlord/mess owner views)
+11. Build listing browse/search page (student view)
+12. Build admin dashboard (approve/reject listings, manage users)
+13. Integrate frontend with backend APIs end-to-end
+14. Testing and bug fixing
+15. Prepare demo/documentation for submission
+
+## License
+
+Academic project — Khulna University of Engineering & Technology.
